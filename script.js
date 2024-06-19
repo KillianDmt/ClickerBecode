@@ -1,4 +1,4 @@
-const orange = document.getElementById('orange');
+const orange = document.getElementById('orangeOnClick');
 
 orange.addEventListener('click', () => {
     let oldScore = document.getElementById('score');
@@ -8,3 +8,4 @@ orange.addEventListener('click', () => {
 
     updateScore(newScore);
     });
+

@@ -17,7 +17,7 @@ body {
     padding : 20px 0;
 }
 
-#updateScore {
+#updateScore, #PerSec {
     top: 0;
     font-size: 4rem;
     font-weight: bold;

@@ -20,17 +20,17 @@ html {
     background-color: lightblue;
 }
 
-* {
+* {justify-content: center;
     overflow: hidden;
     user-select: none;
 }
 header {
-    border: #000 3px solid;
-    margin-bottom: 2vh;
+    /* border: #000 3px solid;  */
+    
 }
 h1 {
     display: flex;
-    margin-top: 1vh;
+    margin-top: 2vh;
     margin-bottom: 0;
     justify-content: center;
     font-family: 'bulle' !important;
@@ -38,36 +38,44 @@ h1 {
     letter-spacing: 2px;
     text-align: center;
     color: rgb(255, 140, 0) ;
-    font-size: 12vh !important;
+    font-size: 15vh !important;
 }
 
 main {
     display: flex;
-    justify-content: space-between;
-    border: #000 solid 2px;
-    height: 80vh;
+    justify-content: space-around;
+    /* border: #000 solid 2px; */
+   
 }
 /* Section orange  */
 #sectionOrange {
-    border: 1px solid red;
-    width: 50%;
+    /* border: 1px solid red; */
+    width: 60%;
     height: fit-content;
     margin-right: 2vh;
     height: 70vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-self: center;
 }
 
+button{
+    padding: 3px;
+    border: inset 6px;
+    background: none;
+    width: 100%;
+}
 #orangeImg {
-     border: 1px solid blue; 
-    display: flex;
-    align-items: center;
-    justify-content: center; 
+    /* border: 1px solid blue; */
     padding: 1vh;
+    width: 100%;
+    
+   
 }
 
 img#orangeOnClick {
+    width: fit-content;
     width: 25rem;
 }
 
@@ -77,8 +85,8 @@ img#orangeOnClick {
 
 /* Parti Score */
 #compte {
-    border: 1px solid green;
-    width: 100%;
+    /* border: 1px solid green; */
+    width: 99%;
     display: flex;
     justify-content: center;  
 }
@@ -107,8 +115,8 @@ img#orangeOnClick {
    
 }
 
-#orangeOnClick:active {
-    width: 50vh;
+button:active{
+transform: translateY(3px);
 }
 
 /* Section Bonus */
@@ -116,15 +124,15 @@ img#orangeOnClick {
     display: flex;
     align-items: space-between;
     padding-left: 1rem;
-    border: 1px #000;
     width: 50%;
+    /* border: 1px #000; */
     padding: 0;
-    border: 2px solid rgb(207, 18, 18); 
+    /* border: 2px solid rgb(207, 18, 18);  */
     height: 50vh;  
+   
 }
 #bonusContainer {
-    margin-top: 10vh;
-    border: solid #000 5px ;
+    /* border: solid #000 5px ;  */
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -134,7 +142,7 @@ img#orangeOnClick {
 }
 
 h3 {
-    border: #000 solid 1px;
+     /* border: #000 solid 1px; */
     font-family: 'textegame' !important;
     font-style: normal;
     font-weight: 1000 !important;
@@ -150,38 +158,44 @@ h3 {
 #listeBonus {
     padding-left: 0%;
     margin: 0;
-    border: #d50a0a 7px solid; 
+    /* border: #d50a0a 7px solid; */
     height: 70%;
     display: flex;
     align-items: center;
-    width: 100%;
     flex-direction: column;
     justify-content: space-between;
+    
 
 }
 
-#listeBonus li {
-    border: solid #a35656 2px;
+#listeBonus li { 
     height: 25%;
-    width: 100%;
+    width: 80%;
     margin: 0%;
     padding: 0%; 
+    
+
+
+    
     
 }
 
 #multiplicateurBonus, #autoClickBonus, #boostBonus {
-    border: 10px purple solid;
+    /* border: 10px purple solid; */
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-left: 0%;
-    
-    
+    background-color: darkorange;
+    border: inset 6px orange; 
+    cursor: pointer; 
 }
 
-
+#multiplicateurBonus:active, #autoClickBonus:active, #boostBonus:active {
+    transform: translateY(6px);
+}
 
 
 /* Keyframes */

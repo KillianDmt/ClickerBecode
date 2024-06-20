@@ -10,6 +10,12 @@
     src: local('textegame'), url('fonts/Invasion2000.ttf') format('truetype');
     }
 
+    @font-face {
+        font-family: 'texte';
+        font-weight: normal;
+        src: local('texte'), url('fonts/advanced_pixel_lcd-7.ttf') format('truetype');
+        }
+
 html {
     background-color: lightblue;
 }
@@ -17,77 +23,83 @@ html {
 * {
     overflow: hidden;
     user-select: none;
-    max-width: 99%;
 }
-
+header {
+    border: #000 3px solid;
+    margin-bottom: 2vh;
+}
 h1 {
     display: flex;
-    margin-top: 5vh;
+    margin-top: 1vh;
     margin-bottom: 0;
-    padding-bottom: 2vh;
     justify-content: center;
     font-family: 'bulle' !important;
+    font-weight: 800;
+    letter-spacing: 2px;
     text-align: center;
-    color: rgb(233, 134, 12) ;
-    font-size: 10vh;
+    color: rgb(255, 140, 0) ;
+    font-size: 12vh !important;
 }
 
 main {
     display: flex;
     justify-content: space-between;
+    border: #000 solid 2px;
+    height: 80vh;
 }
-
+/* Section orange  */
 #sectionOrange {
     border: 1px solid red;
     width: 50%;
     height: fit-content;
-    margin: 2vh;
+    margin-right: 2vh;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-
 #orangeImg {
-    border: 1px solid blue;
+     border: 1px solid blue; 
     display: flex;
     align-items: center;
     justify-content: center; 
-    max-width: 100%;
+    padding: 1vh;
 }
 
-#orangeOnClick {
-    padding: 2vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-height: 90vh;
-    width: 90vh;
-    display: block;
+img#orangeOnClick {
+    width: 25rem;
 }
 
+.time {
+    display: none;
+}
+
+/* Parti Score */
 #compte {
     border: 1px solid green;
     width: 100%;
     display: flex;
-    justify-content: center !important;
-    
-}
-#compte ul {
-    padding-left: 0;
+    justify-content: center;  
 }
 
-#sectionBonus {
-    padding: 1rem;
-    border: 1px solid #000;
-    width: 50%;
-    height: 70vh;
+#compte ul {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-left: 0;
+    margin: 0;
 }
+
 #updateScore, #PerSec {
     font-family: 'textegame' !important;
-    color: rgb(233, 134, 12) ;
+    font-style: normal;
+    font-weight: 1000 !important;
+    color: rgb(255, 140, 0) ;
     font-size: 3vh;
-    border: 1px solid purple;
+    /* border: 1px solid purple; */
 }
 
-
+/* Animation  */
 #orangeOnClick {
     cursor : pointer;
     filter : drop-shadow(0 0 2px white);
@@ -95,39 +107,122 @@ main {
    
 }
 
-
-
 #orangeOnClick:active {
     width: 50vh;
 }
+
+/* Section Bonus */
+#sectionBonus {
+    display: flex;
+    align-items: space-between;
+    padding-left: 1rem;
+    border: 1px #000;
+    width: 50%;
+    padding: 0;
+    border: 2px solid rgb(207, 18, 18); 
+    height: 50vh;  
+}
+#bonusContainer {
+    margin-top: 10vh;
+    border: solid #000 5px ;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+  
+}
+
+h3 {
+    border: #000 solid 1px;
+    font-family: 'textegame' !important;
+    font-style: normal;
+    font-weight: 1000 !important;
+    color: rgb(255, 140, 0) ;
+    font-size: 6vh;
+    margin: 0;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#listeBonus {
+    padding-left: 0%;
+    margin: 0;
+    border: #d50a0a 7px solid; 
+    height: 70%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+#listeBonus li {
+    border: solid #a35656 2px;
+    height: 25%;
+    width: 100%;
+    margin: 0%;
+    padding: 0%; 
+    
+}
+
+#multiplicateurBonus, #autoClickBonus, #boostBonus {
+    border: 10px purple solid;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 0%;
+    
+    
+}
+
+
+
+
 /* Keyframes */
-@media (max-width: 600px) {
+@media screen and (max-width: 700px) {
+    
     main {
         flex-direction: column;
     }
-    #sectionBonus {
-        width: 100%;
-        height: 30vh;
+
+    h1{
+        font-size: 7vh !important;
+        font-weight: 900;
     }
-    #sectionOrange {
+    h3 {
+        font-size: 5vh;
+    }
+    #sectionBonus {
         display: flex;
-        width: 100%;
-        height: 50vh;
+        justify-content: center;
+        width: 99%;
+        margin-top: 2vh;
+        height: 15vh !important;
+        padding: 0;
+        border: 2px solid black;
+   }
+
+    #sectionOrange {
+        width: 99%;
         display: inline-flex;
         flex-direction: column;
+        border: 1px solid rgb(130, 130, 188);
+        
     }
     #listeBonus {
         display: inline-flex;
         flex-direction: row;
+        padding-left: 0;
     }
-    #orangeOnClick { 
-        
-    }
-    #orangeImg {
-        
-        
-    }
+    
 }
+
 @keyframes rotate {
     from {
         transform: rotate(0);

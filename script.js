@@ -51,15 +51,16 @@ auto.addEventListener('click',() => {
 
 function autoclick() {
     /*let nivAuto = document.getElementById('autoClickBonus').classList.contains('niveauBonus').innerText;*/
-    let parSec = parseInt(document.getElementById('clickPerSecond').innerText);
+    var parSec = parseInt(document.getElementById('clickPerSecond').innerText);
 
-    let oldScore = parseInt(document.getElementById('score').innerText);
-    
-    let newScore = oldScore + parSec ; 
-    console.log(newScore);
+    var oldScore = parseInt(document.getElementById('score').innerText);
+    console.log(parSec);
 
-    window.setInterval((updateScore(newScore)),1000,newScore);
-    
+    if (parSec != 0) {
+    var newScore = oldScore + parSec;
+    console.log(newScore); 
+    window.setInterval(updateScore,1000,newScore);
+    }
 }
 
 

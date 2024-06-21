@@ -9,6 +9,7 @@ orange.addEventListener('click', () => {
 
 })
 
+
 let score = 0;
 let multiplier = 1;
 let multiplierCost = 10;

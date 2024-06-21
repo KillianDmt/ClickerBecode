@@ -58,7 +58,7 @@ for (let i = 2; i < 100000; i++) {
     prixNiveau.push(prixNiveau[i - 1] * 2);
 }
 */
-    let nouveauPrix = monNiveau + 10 * monNiveau;
+    let nouveauPrix = 1 + monNiveau + 10 * monNiveau;
 
     // Afficher le nouveau prix dans la console
     console.log("Nouveau prix:", nouveauPrix);
@@ -74,6 +74,7 @@ for (let i = 2; i < 100000; i++) {
         
 }
 else {
+    alert('Pas assez de points pour acheter un auto-clicker !');
     // fonction changement couleur, css,... 
 }
 
@@ -95,18 +96,26 @@ function startTimer() {
 
 // let mix auto Click from Killian and Ronsard
 
-let autoClickerCost = 50;
 const autoClickerButton = document.getElementById('autoclicker-button');
-
+let nivAuto = parseInt(document.querySelector(".niveauBonusA").innerText);
+let prixAuto = parseInt(document.querySelector(".quantiteBonusA").innerText);
 autoClickerButton.addEventListener('click', () => {
-    if (score >= autoClickerCost) {
-        score -= autoClickerCost;
+    if (score >= prixAuto) {
+        score -= prixAuto;
         updateScore();
+
+        nivAuto ++;
+        document.querySelector(".niveauBonusA").innerText = nivAuto;
+        let nouveauPrix = 1 + nivAuto + 10 * nivAuto;
+
+        let quantiteBonusElement = document.querySelector('.quantiteBonusA');
+    
+        quantiteBonusElement.textContent = nouveauPrix; 
+    
         setInterval(() => {
-            score += multiplier;
+            score += nivAuto;
             updateScore();
         }, 1000);
-        autoClickerButton.disabled = true;
     } else {
         alert('Pas assez de points pour acheter un auto-clicker !');
     }
@@ -121,16 +130,14 @@ bonusButton.addEventListener('click', () => {
     if (score >= bonusCost) {
         score -= bonusCost;
         updateScore();
-        let originalMultiplier = multiplier;
-        multiplier *= 2;
-        updateMultiplierButton();
+        let originalMultiplier = nivMult;
         bonusButton.disabled = true;
 
         setTimeout(() => {
-            multiplier = originalMultiplier;
-            updateMultiplierButton();
+            nivMult = originalMultiplier * 2;
             bonusButton.disabled = false;
         }, 30000);
+        nivMult = originalMultiplier;
     } else {
         alert('Pas assez de points pour acheter un bonus !');
     }

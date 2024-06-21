@@ -18,6 +18,10 @@
 
 html {
     background-color: lightblue;
+    height: 100vh;
+}
+body {
+    height: 100%;
 }
 
 * {
@@ -38,14 +42,15 @@ h1 {
     letter-spacing: 2px;
     text-align: center;
     color: rgb(255, 140, 0) ;
-    font-size: 15vh !important;
+    font-size: 18vh !important;
 }
 
 main {
-    margin-left: 10%;
-    margin-right: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
     display: flex;
     justify-content: space-around;
+    height: auto;
     /* border: #000 solid 2px; */
    
 }
@@ -53,33 +58,27 @@ main {
 #sectionOrange {
     /* border: 1px solid red; */
     width: 60%;
-    height: fit-content;
+    height: auto;
     margin-right: 2vh;
-    height: 70vh;
+    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-self: center;
 }
 
-button{
-    border: solid black;
-    background: none;
-    width: 100%;
-}
 #orangeImg {
     /* border: 1px solid blue; */
     display: flex;
     align-items: center;
     justify-content: center; 
-    padding: 1vh;
-    
-   
+    padding: 1vh;  
 }
 
 img#orangeOnClick {
     width: 25rem;
 }
+
 
 .time {
     display: none;
@@ -109,16 +108,21 @@ img#orangeOnClick {
     /* border: 1px solid purple; */
 }
 
-/* Animation  */
+
+
+/* Animation */ 
 #orangeOnClick {
     cursor : pointer;
-    filter : drop-shadow(0 0 2px white);
-    animation: rotate 100s linear infinite;
-   
+    filter : drop-shadow(0 0 3px white);
+    animation: rotate 100s linear infinite;   
 }
 
-button:active{
-transform: translateY(3px);
+
+#orangeImg:active{
+transform: translateY(2px) !important;
+}
+#multiplicateurBonus:active, #autoClickBonus:active, #boostBonus:active {
+    transform: translateY(4px);
 }
 
 /* Section Bonus */
@@ -130,7 +134,7 @@ transform: translateY(3px);
     /* border: 1px #000; */
     padding: 0;
     /* border: 2px solid rgb(207, 18, 18);  */
-    height: 50vh;  
+    height: 40vh;  
     align-self: center;
 }
 
@@ -139,7 +143,7 @@ transform: translateY(3px);
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-evenly;
     
   
 }
@@ -162,7 +166,7 @@ h3 {
     padding-left: 0%;
     margin: 0;
     /* border: #d50a0a 7px solid; */
-    height: 70%;
+    height: 60%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -175,12 +179,7 @@ h3 {
     height: 25%;
     width: 80%;
     margin: 0%;
-    padding: 0%; 
-    
-
-
-    
-    
+    padding: 0%;   
 }
 
 #multiplicateurBonus, #autoClickBonus, #boostBonus {
@@ -192,52 +191,81 @@ h3 {
     align-items: center;
     padding-left: 0%;
     background-color: darkorange;
-    border: inset 6px orange; 
+    border: inset 5px orange; 
     cursor: pointer; 
+    border-radius: 10px;
+    box-shadow: 5px white !important;
 }
 
-#multiplicateurBonus:active, #autoClickBonus:active, #boostBonus:active {
-    transform: translateY(6px);
-}
+/* boutons layout */
 
 
 /* Keyframes */
 @media screen and (max-width: 700px) {
-    
+    hr {
+    width: 100%;
+}
     main {
+        width: 99%;
+        display: flex;
         flex-direction: column;
+        justify-content: center;
+        margin:0%;
+        height: 70vh;
     }
 
     h1{
-        font-size: 7vh !important;
-        font-weight: 900;
+        font-size: 9vh !important;
+        margin-bottom: 1vh;
     }
     h3 {
-        font-size: 5vh;
+        font-size: 4.5vh;
     }
     #sectionBonus {
         display: flex;
         justify-content: center;
         width: 99%;
-        margin-top: 2vh;
-        height: 15vh !important;
+        height: 20vh;
         padding: 0;
-        border: 2px solid black;
+        margin-left: 0% ;
+        
    }
-
+   
     #sectionOrange {
         width: 99%;
         display: inline-flex;
         flex-direction: column;
-        border: 1px solid rgb(130, 130, 188);
-        
+        height: 60vh;
+        margin-right: 0%;
+        margin-bottom: 1vh; 
+        margin-top: 1vh;
     }
+
     #listeBonus {
         display: inline-flex;
         flex-direction: row;
         padding-left: 0;
+        margin-top: 0;
+        height: 35%;
     }
-    
+
+    #listeBonus li { 
+        height: 100%; 
+        margin: 0.5vh; 
+    }
+
+    img#orangeOnClick {
+        width: 20rem !important;
+    }
+
+    #multiplicateurBonus, #autoClickBonus, #boostBonus {
+        border: inset 6px lightsalmon; 
+        border-radius: 6px;
+    } 
+    #orangeImg {
+       
+
+    }
 }
 
 @keyframes rotate {

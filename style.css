@@ -20,7 +20,7 @@ html {
     background-color: lightblue;
 }
 
-* {justify-content: center;
+* {
     overflow: hidden;
     user-select: none;
 }
@@ -42,6 +42,8 @@ h1 {
 }
 
 main {
+    margin-left: 10%;
+    margin-right: 10%;
     display: flex;
     justify-content: space-around;
     /* border: #000 solid 2px; */
@@ -61,21 +63,21 @@ main {
 }
 
 button{
-    padding: 3px;
-    border: inset 6px;
+    border: solid black;
     background: none;
     width: 100%;
 }
 #orangeImg {
     /* border: 1px solid blue; */
+    display: flex;
+    align-items: center;
+    justify-content: center; 
     padding: 1vh;
-    width: 100%;
     
    
 }
 
 img#orangeOnClick {
-    width: fit-content;
     width: 25rem;
 }
 
@@ -124,13 +126,14 @@ transform: translateY(3px);
     display: flex;
     align-items: space-between;
     padding-left: 1rem;
-    width: 50%;
+    width: 60%;
     /* border: 1px #000; */
     padding: 0;
     /* border: 2px solid rgb(207, 18, 18);  */
     height: 50vh;  
-   
+    align-self: center;
 }
+
 #bonusContainer {
     /* border: solid #000 5px ;  */
     width: 100%;
@@ -147,7 +150,7 @@ h3 {
     font-style: normal;
     font-weight: 1000 !important;
     color: rgb(255, 140, 0) ;
-    font-size: 6vh;
+    font-size: 5vh;
     margin: 0;
     height: 25%;
     display: flex;

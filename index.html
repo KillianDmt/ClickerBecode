@@ -13,59 +13,54 @@
 </head>
  <body>
     <header>
-        <h1>
+        <h1 id='title'> Squach&nbsp;it&nbsp;down&nbsp;!
         </h1>
     </header>
     <main>
-        <section>
-                <article>
-                    <p id="counterBoost">
-                    </p>
+        <section id="sectionOrange">
+                <article id="orange">
+                    <h3 class="time">Time&nbsp;: <span id="counterBoost">&nbsp;0</span>
+                    </3>
                 </article>
-                <article>
-                    <img id="orangeOnClick" src="/Orange.png" alt="">
+                <article id="orangeImg">
+                    <img id="orangeOnClick" src="./Orange.png" alt="">
                 </article>
-                <article>
+                <article id="compte">
                     <ul>
-                        <li id="updateScore"><span id="score">0</span></li>
-                        <li id="clickPerSecond"><span id="second">0</span></li>
+                        <li id="updateScore"><span id="score">0</span>&nbsp;Orange(s)</li>
+                        <li id="PerSec"><span id="clickPerSecond">0</span>&nbsp;Per&nbsp;second</li>
                     </ul>
                 </article>
-        </section>
-        <section>
-            <h3>
-            </h3>
-            <ul>
-                <li>
-                    <button id="multiplierButton">Acheter Multiplicateur x2 (10 points)</button>
-                        <ul>
-                            <li><img src="" alt=""><p class="niveauBonus"></p></li>
-                            <li><p class="nomBonus"></p></li>
-                            <li><img src="" alt=""><p class="quantiteBonus"></p></li>
-                        </ul>
+        </section >
+        <section id='sectionBonus'>
+            <article id="bonusContainer">
+                <h3> Juicy&nbsp;Bonus </h3>
+            <ul id="listeBonus">
+                <li> 
+                    <button id="multiplicateurBonus" class="button">
+                        <img src="" alt=""><p class="niveauBonusM">0</p>
+                        <p class="nomBonus">Multiplicateur</p>
+                        <img src="" alt=""><p class="quantiteBonusM">1</p>
                     </button>
                 </li>
                 <li>
-                    <button id="autoclicker-button">Acheter Auto-Clicker (50 points)</button>
-                        <ul>
-                            <li><img src="" alt=""><p class="niveauBonus"></p></li>
-                            <li><p class="nomBonus"></p></li>
-                            <li><img src="" alt=""><p class="quantiteBonus"></p></li>
-                        </ul>
+                    <button id="autoClickBonus" class="button">
+                        <img src="" alt=""><p class="niveauBonusA">0</p>
+                        <p class="nomBonus">AutoClick</p>
+                        <img src="" alt=""><p class="quantiteBonusA">5</p>
                     </button>
                 </li>
                 <li>
-                    <button id="bonus-button">Acheter Bonus (100 points)</button>
-                        <ul>
-                            <li><img src="" alt=""><p class="niveauBonus"></p></li>
-                            <li><p class="nomBonus"></p></li>
-                            <li><img src="" alt=""><p class="quantiteBonus"></p></li>
-                        </ul>
+                    <button id="boostBonus" class="button">
+                            <img src="" alt=""><p class="niveauBonusE">0</p>
+                            <p class="nomBonus">X 2</p>
+                            <img src="" alt=""><p class="quantiteBonusE">100</p>
                     </button>
                 </li>
             </ul>  
+        </article>
         </section>
-    </main>
+    </main>   
     <script src="script.js"></script>
  </body>
 </html>

@@ -81,12 +81,12 @@ else {
 
 });
 
-//by Ronsard 
+//Update du Score by Ronsard 
 function updateScore() {
     scoreDisplay.textContent = score;
 }
 
-//by Ronsard how to adapt it ?  ... Miss function updateTimeElapsedDisplay
+//Fonction Timer pour Bonus Extra by Ronsard how to adapt it ?  ... Miss function updateTimeElapsedDisplay
 function startTimer() {
     interval = setInterval(() => {
         timeElapsed++;
@@ -94,9 +94,9 @@ function startTimer() {
     }, 0);
 }
 
-// let mix auto Click from Killian and Ronsard
+// Auto Click by Killian and Ronsard
 
-const autoClickerButton = document.getElementById('autoclicker-button');
+const autoClickerButton = document.getElementById('autoClickBonus');
 let nivAuto = parseInt(document.querySelector(".niveauBonusA").innerText);
 let prixAuto = parseInt(document.querySelector(".quantiteBonusA").innerText);
 autoClickerButton.addEventListener('click', () => {
@@ -124,7 +124,7 @@ autoClickerButton.addEventListener('click', () => {
 //By Ronsard Bonus Timed 
 
 let bonusCost = document.querySelector('.quantiteBonusE').innerText;
-const bonusButton = document.getElementById('bonus-button');
+const bonusButton = document.getElementById('boostBonus');
 
 bonusButton.addEventListener('click', () => {
     if (score >= bonusCost) {

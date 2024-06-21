@@ -1,46 +1,233 @@
+@font-face {
+    font-family: 'bulle';
+    font-weight: normal;
+    src: local('bulle'), url('./fonts/Nightmare\ Codehack.otf') format('opentype');
+    }
+
+@font-face {
+    font-family: 'textegame';
+    font-weight: normal;
+    src: local('textegame'), url('./fonts/') format('truetype');
+    }
+
+    @font-face {
+        font-family: 'texte';
+        font-weight: normal;
+        src: local('texte'), url('./fonts/advanced_pixel_lcd-7.ttf') format('truetype');
+        }
+
+html {
+    background-color: lightblue;
+}
+
 * {
-    margin : 0;
-    padding : 0;
-    font-family: Arial, Helvetica, sans-serif;
-    overflow : hidden;
+    overflow: hidden;
     user-select: none;
 }
-
-body {
-    height: 100vh;
-    display : flex;
-    justify-content : center;
-    align-items: center;
-    flex-direction: column;
-    gap : 50px;
-    background-color: lightblue;
-    padding : 20px 0;
+header {
+    border: #000 3px solid;  
+    
 }
-
-#updateScore {
-    top: 0;
-    font-size: 4rem;
-    font-weight: bold;
-    text-shadow: 0 0 10px black;
-    width : 100%;
+h1 {
+    display: flex;
+    margin-top: 2vh;
+    margin-bottom: 0;
+    justify-content: center;
+    font-family: 'bulle' !important;
+    font-weight: 800;
+    letter-spacing: 2px;
     text-align: center;
-    color: white;
-    background-color: rgba(0,0,0,0.4);
+    color: rgb(255, 140, 0) ;
+    font-size: 15vh !important;
 }
 
+main {
+    margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    justify-content: space-around;
+    /* border: #000 solid 2px; */
+   
+}
+/* Section orange  */
+#sectionOrange {
+    /* border: 1px solid red; */
+    width: 60%;
+    height: fit-content;
+    margin-right: 2vh;
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+}
 
+button{
+    border: solid black;
+    background: none;
+    width: 100%;
+}
+#orangeImg {
+    /* border: 1px solid blue; */
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    padding: 1vh;  
+}
+img#orangeOnClick {
+    width: 25rem;
+}
+
+.time {
+    display: none;
+}
+
+/* Parti Score */
+#compte {
+    /* border: 1px solid green; */
+    width: 99%;
+    display: flex;
+    justify-content: center;  
+}
+
+#compte ul {
+    padding-top: 1vh;
+    padding-bottom: 1vh;
+    padding-left: 0;
+    margin: 0;
+}
+
+#updateScore, #PerSec {
+    font-family: 'textegame' !important;
+    font-style: normal;
+    font-weight: 1000 !important;
+    color: rgb(255, 140, 0) ;
+    font-size: 3vh;
+    /* border: 1px solid purple; */
+}
+
+/* Animation  */
 #orangeOnClick {
-    width : 300px;
     cursor : pointer;
     filter : drop-shadow(0 0 2px white);
     animation: rotate 100s linear infinite;
 }
 
-#orangeOnClick:active {
-    width: 280px;
+button:active{
+transform: translateY(3px);
 }
 
+/* Section Bonus */
+#sectionBonus {
+    display: flex;
+    align-items: space-between;
+    padding-left: 1rem;
+    width: 60%;
+    /* border: 1px #000; */
+    padding: 0;
+    /* border: 2px solid rgb(207, 18, 18);  */
+    height: 50vh;  
+    align-self: center;
+}
+
+#bonusContainer {
+    /* border: solid #000 5px ;  */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+}
+
+h3 {
+     /* border: #000 solid 1px; */
+    font-family: 'textegame' !important;
+    font-style: normal;
+    font-weight: 1000 !important;
+    color: rgb(255, 140, 0) ;
+    font-size: 5vh;
+    margin: 0;
+    height: 25%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#listeBonus {
+    padding-left: 0%;
+    margin: 0;
+    /* border: #d50a0a 7px solid; */
+    height: 70%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    
+
+}
+
+#listeBonus li { 
+    height: 25%;
+    width: 80%;
+    margin: 0%;
+    padding: 0%;     
+}
+
+#multiplicateurBonus, #autoClickBonus, #boostBonus {
+    /* border: 10px purple solid; */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 0%;
+    background-color: darkorange;
+    border: inset 6px orange; 
+    cursor: pointer; 
+}
+
+#multiplicateurBonus:active, #autoClickBonus:active, #boostBonus:active {
+    transform: translateY(6px);
+}
+
+
 /* Keyframes */
+@media screen and (max-width: 700px) {
+    
+    main {
+        flex-direction: column;
+    }
+
+    h1{
+        font-size: 7vh !important;
+        font-weight: 900;
+    }
+    h3 {
+        font-size: 5vh;
+    }
+    #sectionBonus {
+        display: flex;
+        justify-content: center;
+        width: 99%;
+        margin-top: 2vh;
+        height: 15vh !important;
+        padding: 0;
+        border: 2px solid black;
+   }
+
+    #sectionOrange {
+        width: 99%;
+        display: inline-flex;
+        flex-direction: column;
+        border: 1px solid rgb(130, 130, 188);
+        
+    }
+    #listeBonus {
+        display: inline-flex;
+        flex-direction: row;
+        padding-left: 0;
+    }
+    
+}
 
 @keyframes rotate {
     from {

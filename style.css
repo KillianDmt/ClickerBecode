@@ -1,19 +1,19 @@
 @font-face {
     font-family: 'bulle';
     font-weight: normal;
-    src: local('bulle'), url('fonts/Nightmare\ Codehack.otf') format('opentype');
+    src: local('bulle'), url('./fonts/Nightmare\ Codehack.otf') format('opentype');
     }
 
 @font-face {
     font-family: 'textegame';
     font-weight: normal;
-    src: local('textegame'), url('fonts/Invasion2000.ttf') format('truetype');
+    src: local('textegame'), url('./fonts/') format('truetype');
     }
 
     @font-face {
         font-family: 'texte';
         font-weight: normal;
-        src: local('texte'), url('fonts/advanced_pixel_lcd-7.ttf') format('truetype');
+        src: local('texte'), url('./fonts/advanced_pixel_lcd-7.ttf') format('truetype');
         }
 
 html {

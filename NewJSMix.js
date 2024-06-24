@@ -99,13 +99,16 @@ function startTimer() {
 const autoClickerButton = document.getElementById('autoClickBonus');
 let nivAuto = parseInt(document.querySelector(".niveauBonusA").innerText);
 let prixAuto = parseInt(document.querySelector(".quantiteBonusA").innerText);
+
 autoClickerButton.addEventListener('click', () => {
     if (score >= prixAuto) {
         score -= prixAuto;
         updateScore();
 
         nivAuto ++;
+        document.querySelector('#clickPerSecond').innerText = nivAuto;
         document.querySelector(".niveauBonusA").innerText = nivAuto;
+        
         let nouveauPrix = 1 + nivAuto + 10 * nivAuto;
 
         let quantiteBonusElement = document.querySelector('.quantiteBonusA');

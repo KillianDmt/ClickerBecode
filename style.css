@@ -85,15 +85,11 @@ img#orangeOnClick {
 
 .time {
     font-size: 4vh;
-    border: groove darkorange 1px;
-    border-radius: 10px;
    padding: 0.5vh;
     padding-left: 2vh;
     padding-right: 2vh;
     width: fit-content;
     padding-bottom: 1vh;
-    
-
 }
 
 /* Parti Score */

@@ -235,7 +235,15 @@ p {
     margin-right: 1vh;
 }
 
+/* juice at the bottom */
 
+footer{
+    border: solid;
+    width: 99%;
+    height: 10vh;
+  } 
+
+  
 /* Keyframes */
 @media screen and (max-width: 700px) {
     hr {
@@ -270,7 +278,7 @@ p {
     display: none;
    }
 
-   
+
     #sectionOrange {
         width: 99%;
         display: inline-flex;

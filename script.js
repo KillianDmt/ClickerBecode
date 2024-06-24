@@ -22,19 +22,26 @@ function updateScore(newScore) {
 }
 
 auto.addEventListener('click',() => {
-    const prixActu = document.getElementById('autoClickBonus').classList.contains('quantiteBonus').innerText;
-    const nivActu = document.getElementById('autoClickBonus').classList.contains('niveauBonus').innerText;
-
-    const scoreActu = document.getElementById('score').innerText;
-
+    let prixActu = parseInt(document.querySelector('#autoClickBonus .quantiteBonus').innerText);
+    let nivActu = parseInt(document.querySelector('#autoClickBonus .niveauBonusA').innerText);
+    let parSec = parseInt(document.getElementById('clickPerSecond').innerText);
+    let scoreActu = parseInt(document.getElementById('score').innerText);
+    console.log(nivActu)
     if (scoreActu >= prixActu) {
         nivActu ++;
-        document.getElementById('autoClickBonus').classList.contains('niveauBonus').innerText = nivActu;
+        document.querySelector('#autoClickBonus .niveauBonusA').innerText = nivActu;
+        console.log(nivActu);
 
         scoreActu -= prixActu;
-        document.getElementById('autoClickBonus').classList.contains('quantiteBonus').innerText = scoreActu;
+        document.getElementById('score').innerText = scoreActu;
 
-        prixActu = tableauAuto[nivActu];
+        parSec += nivActu;
+        document.getElementById('clickPerSecond').innerText = parSec;
+        console.log(parSec);
+
+        prixActu = autoPrix[nivActu];
+        document.querySelector('#autoClickBonus .quantiteBonus').innerText = prixActu;
+
     } 
     else {
         /*Change CSS Red*/ 
@@ -43,9 +50,18 @@ auto.addEventListener('click',() => {
 });
 
 function autoclick() {
-    let nivAuto = document.getElementById('autoClickBonus').classList.contains('niveauBonus').innerText;
-    let parSec = document.getElementById('clickPerSecond').innerText;
+    /*let nivAuto = document.getElementById('autoClickBonus').classList.contains('niveauBonus').innerText;*/
+    var parSec = parseInt(document.getElementById('clickPerSecond').innerText);
+
+    var oldScore = parseInt(document.getElementById('score').innerText);
+    console.log(parSec);
+
+    if (parSec != 0) {
+    var newScore = oldScore + parSec;
+    console.log(newScore); 
+    window.setInterval(updateScore,1000,newScore);
+    }
 }
 
 
-autoClick();
+autoclick();

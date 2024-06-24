@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const quantiteBonusAElem = document.querySelector('.quantiteBonusA');
     const niveauBonusEElem = document.querySelector('.niveauBonusE');
     const quantiteBonusEElem = document.querySelector('.quantiteBonusE');
+    
 
     // Fonction pour mettre à jour l'affichage
     function updateDisplay() {
@@ -43,6 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Fonction pour démarrer le boost
+
     function startBoost() {
         if (boostActive || cookies < boostCost) return;
 
@@ -66,6 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fonction pour terminer le boost
     function endBoost() {
+        niveauBonusEElem.textContent = boostLevel++;
         boostActive = false;
         cookiesPerSecond /= 2;
         cookiesPerClick /= 2;
@@ -77,8 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
     function upgradeBoost() {
         if (cookies < boostCost) return;
         cookies -= boostCost;
-        boostLevel++;
-        boostCost = Math.floor(boostCost * 1.5);
+        // boostLevel++;
+        boostCost = Math.floor(boostCost * 2);
         updateDisplay();
     }
 
@@ -130,19 +133,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Clic sur le bouton pour démarrer le boost et l'améliorer
     boostButton.addEventListener('click', () => {
+       
         startBoost();
         upgradeBoost();
+        updateDisplay();
+        
     });
 
     // Clic sur le bouton pour améliorer le multiplicateur de bonus
     multiplicateurBonus.addEventListener('click', upgradeMultiplicateurBonus);
 
     // Bonus multiplicateur au premier clic
-    niveauBonusMElem.textContent = 1; // Définition du niveau à 1 dès le départ
+    niveauBonusMElem.textContent = 0; // Définition du niveau à 1 dès le départ
     quantiteBonusMElem.textContent = 1 + 1 + 10 * 1; // Calcul du prix initial
 
     // Megajuicer au premier clic
-    niveauBonusEElem.textContent = 1; // Définition du niveau à 1 dès le départ
+    niveauBonusEElem.textContent = 1 + 1; // Définition du niveau à 1 dès le départ
 
     // Initialisation
     autoclick();

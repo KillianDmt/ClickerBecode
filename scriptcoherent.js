@@ -1,17 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Variables globales
-    let cookies = 0;
-    let cookiesPerSecond = 0;
-    let cookiesPerClick = 1;
-    let autoClickLevel = 0;
-    let boostLevel = 0;
-    let boostCost = 100;
-    let boostActive = false;
-    const autoClickPrices = [
-        1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765,
-        10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811
-    ];
-
     // Éléments DOM
     const scoreElem = document.getElementById('score');
     const clickPerSecondElem = document.getElementById('clickPerSecond');
@@ -25,6 +12,30 @@ document.addEventListener('DOMContentLoaded', () => {
     const quantiteBonusAElem = document.querySelector('.quantiteBonusA');
     const niveauBonusEElem = document.querySelector('.niveauBonusE');
     const quantiteBonusEElem = document.querySelector('.quantiteBonusE');
+
+    // Bonus multiplicateur au premier clic
+    niveauBonusMElem.textContent = 0; // Définition du niveau à 1 dès le départ  Pourquoi ? 1 * (2 ** nivMult) si niv 1 direct a 2
+    console.log(niveauBonusMElem);
+    quantiteBonusMElem.textContent = 1 + 1 + 10 * 1; // Calcul du prix initial
+
+    // Variables globales
+
+    let nivMult = parseInt(niveauBonusMElem.textContent);
+    console.log (nivMult);
+    let cookies = 0;
+    let cookiesPerSecond = 0;
+    let cookiesPerClick = 1;
+    console.log(cookiesPerClick);
+    let autoClickLevel = 0;
+    let boostLevel = 0;
+    let boostCost = 100;
+    let boostActive = false;
+    const autoClickPrices = [
+        1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765,
+        10946, 17711, 28657, 46368, 75025, 121393, 196418, 317811
+    ];
+
+
 
     // Fonction pour mettre à jour l'affichage
     function updateDisplay() {
@@ -44,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fonction pour démarrer le boost
     function startBoost() {
-        if (boostActive || cookies < boostCost) return;
+        if (boostActive || cookies <= boostCost) return;
 
         boostActive = true;
         cookies -= boostCost;
@@ -75,7 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Fonction pour mettre à jour le boost
     function upgradeBoost() {
-        if (cookies < boostCost) return;
+        if (cookies <= boostCost) return;
         cookies -= boostCost;
         boostLevel++;
         boostCost = Math.floor(boostCost * 1.5);
@@ -110,6 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
             let nouveauNiveau = monNiveau + 1;
             let nouveauPrix = 1 + nouveauNiveau + 10 * nouveauNiveau;
 
+            nivMult = nouveauNiveau;
             niveauBonusMElem.textContent = nouveauNiveau;
             quantiteBonusMElem.textContent = nouveauPrix;
 
@@ -123,7 +135,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // Événements
 
     // Clic sur l'orange pour incrémenter manuellement les cookies
-    orangeOnClick.addEventListener('click', () => incrementCookies(cookiesPerClick));
+    orangeOnClick.addEventListener('click', () => {
+        cookiesPerClick = 1 * (2 ** nivMult);
+        incrementCookies(cookiesPerClick)
+    });
 
     // Clic sur le bouton pour améliorer l'auto-clic
     autoClickButton.addEventListener('click', upgradeAutoClick);
@@ -137,9 +152,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Clic sur le bouton pour améliorer le multiplicateur de bonus
     multiplicateurBonus.addEventListener('click', upgradeMultiplicateurBonus);
 
-    // Bonus multiplicateur au premier clic
-    niveauBonusMElem.textContent = 1; // Définition du niveau à 1 dès le départ
-    quantiteBonusMElem.textContent = 1 + 1 + 10 * 1; // Calcul du prix initial
 
     // Megajuicer au premier clic
     niveauBonusEElem.textContent = 1; // Définition du niveau à 1 dès le départ

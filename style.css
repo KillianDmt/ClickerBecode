@@ -229,11 +229,7 @@ p {
 
 /* juice at the bottom */
 
-footer{
-    border: solid;
-    width: 99%;
-    height: 10vh;
-  } 
+
 
   
 /* Keyframes */
@@ -334,5 +330,182 @@ footer{
     }
     to {
         transform: rotate(360deg);
+    }
+}
+
+/* animation */
+
+footer{
+    position: fixed;
+    align-items: flex-end;
+    overflow: hidden;
+    background: transparent;
+    width: 104%;
+    height: 20vh;
+    margin-left: -3vh;
+    margin-right: -3vh;
+  } 
+
+  .wave-container {
+    position: relative;
+    width: 100%;
+    height: 20vh;
+    background: transparent;    
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    width: 200%;
+    height: 75%;
+    background: linear-gradient(to top, orange, rgb(255, 111, 0));
+    opacity: 0.7;
+    animation: wave-animation-1 8s infinite ease-in-out;
+    transform-origin: bottom center;
+}
+
+.wave::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: inherit;
+    border-radius: 50%;
+}
+
+.wave1 {
+    animation: wave-animation-1 4s infinite ease-in-out;
+    animation-delay: 0s;
+}
+
+.wave2 {
+    animation: wave-animation-2 8s infinite ease-in-out;
+    opacity: 0.6;
+    animation-delay: -2s;
+}
+
+.wave3 {
+    animation: wave-animation-3 8s infinite ease-in-out;
+    opacity: 0.5;
+    animation-delay: -4s;
+}
+
+.wave4 {
+    animation: wave-animation-4 8s infinite ease-in-out;
+    opacity: 0.8;
+    animation-delay: -6s;
+}
+
+.wave5 {
+    animation: wave-animation-5 8s infinite ease-in-out;
+    opacity: 0.8;
+
+    animation-delay: -8s;
+}
+.wave7 {
+    animation: wave-animation-4 8s infinite ease-in-out;
+    opacity: 0.8;
+    animation-delay: -7s;
+}
+
+.wave8 {
+    animation: wave-animation-5 8s infinite ease-in-out;
+    opacity: 0.8;
+
+    animation-delay: -9s;
+}
+
+.wave6 {
+    animation: wave-animation-1 8s infinite ease-in-out;
+    animation-delay: 0s;
+    overflow: hidden;
+}
+
+
+@keyframes wave-animation-1 {
+    0%, 100% {
+        transform: translateX(0) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-30px);
+    }
+}
+
+@keyframes wave-animation-2 {
+    0%, 100% {
+        transform: translateX(0) translateY(0);
+    }
+    25% {
+        transform: translateX(-25%) translateY(-15px);
+    }
+    75% {
+        transform: translateX(-50%) translateY(15px);
+    }
+}
+
+@keyframes wave-animation-3 {
+    0%, 100% {
+        transform: translateX(0) translateY(0);
+    }
+    25% {
+        transform: translateX(-30%) translateY(-10px);
+    }
+    75% {
+        transform: translateX(-60%) translateY(10px);
+    }
+}
+
+@keyframes wave-animation-4 {
+    0%, 100% {
+        transform: translateX(0) translateY(0);
+    }
+    25% {
+        transform: translateX(-20%) translateY(20px);
+    }
+    75% {
+        transform: translateX(-40%) translateY(-20px);
+    }
+}
+
+@keyframes wave-animation-5 {
+    0%, 100% {
+        transform: translateX(0) translateY(0);
+    }
+    25% {
+        transform: translateX(-15%) translateY(30px);
+    }
+    75% {
+        transform: translateX(-35%) translateY(-30px);
+    }
+}
+
+@keyframes wave-animation-6 {
+    0%, 100% {
+        transform: translateX(0) translateY(0);
+    }
+    25% {
+        transform: translateX(-50%) translateY(20px);
+    }
+    75% {
+        transform: translateX(-70%) translateY(-30px);
+    }
+}
+
+@keyframes tilt-left-right {
+    0%, 100% {
+        transform: rotateZ(-5deg);
+    }
+    50% {
+        transform: rotateZ(5deg);
+    }
+}
+@keyframes tilt-left-right-2 {
+    0%, 100% {
+        transform: rotateZ(5deg);
+    }
+    50% {
+        transform: rotateZ(-5deg);
     }
 }

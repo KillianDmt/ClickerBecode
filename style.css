@@ -260,7 +260,10 @@ p {
     #listeBonus li {
         width: 70%;
     }
-
+    img#orangeOnClick {
+        width: 20rem;
+    }
+    
     footer {
         bottom: -15vh;
         width: 130%;

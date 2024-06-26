@@ -227,7 +227,22 @@ p {
     margin-right: 1vh;
 }
 
-/* juice at the bottom */
+@media  screen and (min-width: 1000px) {
+
+    body {
+        display: flex; 
+        justify-content: center
+    }
+    main {
+        width: 80%;
+        height: 90%;   
+    }
+
+    footer {
+        top: -5vh;
+    }
+    
+}
 
 
 /* Keyframes mobile */

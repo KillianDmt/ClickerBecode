@@ -1,2 +1,5 @@
-# ClickerBecode
-Cookie Clicker exo 19.06
+# Squash it Down 
+## _The Orange Clicker_
+
+
+[Squash it Down](https://killiandmt.github.io/ClickerBecode/) 

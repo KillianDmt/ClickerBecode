@@ -227,7 +227,7 @@ p {
     margin-right: 1vh;
 }
 
-@media  screen and (min-width: 1200px) {
+@media  screen and (min-width: 1000px) {
 
     body { 
         align-items: center;
@@ -235,8 +235,12 @@ p {
         
         
     }
-    
-   
+    #compte ul{
+        display: flex;
+        justify-content: space-around;
+        width: 80%;
+}
+       
     #sectionOrange{
         width: 40%;   
     } 
@@ -248,6 +252,9 @@ p {
         height: 70VH;
         margin-left: 10vh;
         margin-right: 10vh; 
+    }
+    #listeBonus li {
+        width: 70%;
     }
 
     footer {

@@ -4,6 +4,10 @@
 ![Squash it Down](Squash.png)
 [Squash it Down](https://killiandmt.github.io/ClickerBecode/) 
 
+___
+
+The objectives of this project was to start working in team on a "Bigger" Projec, dealing with kanban method using [Trello](https://trello.com/), solving merging issues,... 
+
 ## HTML / CSS Structure 
 
 Working from the start from a hand drawn sketch Celia Build the Html/CSS structure for our project. 
@@ -21,3 +25,14 @@ We encountered a few problems along the way,...
 ## Incoming Changes...
 
 We still are thinking about some stuff to had to this project.. 
+
+
+
+____
+
+
+## Project was made by 
+
+[Celia](https://github.com/celiasallet)
+[Ronsard](https://github.com/RonSardD)
+[Killian](https://github.com/KillianDmt)

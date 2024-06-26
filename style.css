@@ -84,12 +84,16 @@ img#orangeOnClick {
 }
 
 .time {
-    font-size: 2vh;
+    font-size: 3vh;
    padding: 0.5vh;
     padding-left: 2vh;
     padding-right: 2vh;
     width: fit-content;
     padding-bottom: 1vh;
+    font-family: 'textegame' !important;
+    font-style: normal;
+    font-weight: 1000 !important;
+    color: rgb(255, 140, 0) ;
 }
 
 /* Parti Score */
@@ -243,7 +247,7 @@ p {
        
     #sectionOrange{
         width: 40%;
-        height: 70%;   
+        height: 60%;   
     } 
 
     main {
